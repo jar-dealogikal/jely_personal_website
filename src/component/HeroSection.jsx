@@ -26,17 +26,14 @@ const HeroSection = () => {
 							<FaFacebook className="h-7 w-7 text-[#e126fe] hover:text-pink-500" />
 						</a>
 						<a
-							href="https://www.instagram.com/janmaaku14/"
+							href="https://www.instagram.com/jelylariosa/?fbclid=IwY2xjawFplzlleHRuA2FlbQIxMAABHYKOEUv4ZV_1QRKFQv8NCQKa9VD12CpQfshnpNgIhzibtsmEmTh0ZpN-9w_aem_zLUlL1HqACqtOaL93Nr0vQ"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="cursor-pointer "
 						>
 							<FaInstagram className="h-7 w-7 text-[#e126fe] hover:text-pink-400" />
 						</a>
-						<a
-							href="mailto:janmaakurubio14@gmail.com"
-							className="cursor-pointer"
-						>
+						<a href="mailto:lariosaenjely@gmail.com" className="cursor-pointer">
 							<FaEnvelope className="h-7 w-7 text-[#e126fe] hover:text-pink-500" />
 						</a>
 					</div>
