@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/jely_personal_website/static/css/main.26f018d7.css",
+    "main.js": "/jely_personal_website/static/js/main.1b94354a.js",
+    "static/js/453.8463039d.chunk.js": "/jely_personal_website/static/js/453.8463039d.chunk.js",
+    "static/media/img8.jpg": "/jely_personal_website/static/media/img8.0168d576e877340f4e13.jpg",
+    "static/media/img6.jpg": "/jely_personal_website/static/media/img6.86dcf958fcc3a46d7473.jpg",
+    "static/media/img9.jpg": "/jely_personal_website/static/media/img9.135d1e4a85e6d2abe694.jpg",
+    "static/media/img7.jpg": "/jely_personal_website/static/media/img7.b608c016a5bbea522865.jpg",
+    "static/media/img2.jpg": "/jely_personal_website/static/media/img2.7db38766999227480bba.jpg",
+    "static/media/img4.jpg": "/jely_personal_website/static/media/img4.35d3bc914d7dbe33546c.jpg",
+    "static/media/img5.jpg": "/jely_personal_website/static/media/img5.59c406ddcce8624ab1c0.jpg",
+    "static/media/img10.jpg": "/jely_personal_website/static/media/img10.749bf585f0c435d3327e.jpg",
+    "static/media/img12.jpg": "/jely_personal_website/static/media/img12.6c9f87cb91879c3639d7.jpg",
+    "static/media/img11.jpg": "/jely_personal_website/static/media/img11.9ae1e1e12af37bc51a1b.jpg",
+    "static/media/img3.jpg": "/jely_personal_website/static/media/img3.c6bcd939f3f830f310ee.jpg",
+    "static/media/img1.jpg": "/jely_personal_website/static/media/img1.fbfc101e6ef46b09c526.jpg",
+    "index.html": "/jely_personal_website/index.html",
+    "main.26f018d7.css.map": "/jely_personal_website/static/css/main.26f018d7.css.map",
+    "main.1b94354a.js.map": "/jely_personal_website/static/js/main.1b94354a.js.map",
+    "453.8463039d.chunk.js.map": "/jely_personal_website/static/js/453.8463039d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26f018d7.css",
+    "static/js/main.1b94354a.js"
+  ]
+}
