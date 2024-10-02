@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
+import logo from "../images/logo.jpg";
 const navigation = [
 	{ name: "About", href: "#about" },
 	{ name: "Blogs", href: "#blog" },
@@ -17,17 +17,14 @@ export default function HeroSection() {
 	return (
 		<header className="bg-white">
 			<nav
+				id="/#"
 				aria-label="Global"
 				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
 			>
 				<div className="flex items-center gap-x-12">
 					<a href="/#" className="-m-1.5 p-1.5">
 						<span className="sr-only">Your Company</span>
-						<img
-							alt=""
-							src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-							className="h-8 w-auto"
-						/>
+						<img alt="" src={logo} className="h-10 rounded-full w-auto" />
 					</a>
 					<div className="hidden lg:flex lg:gap-x-12">
 						{navigation.map((item) => (
@@ -62,11 +59,7 @@ export default function HeroSection() {
 					<div className="flex items-center justify-between">
 						<a href="/#" className="-m-1.5 p-1.5">
 							<span className="sr-only">Your Company</span>
-							<img
-								alt=""
-								src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-								className="h-8 w-auto"
-							/>
+							<img alt="" src="logo" className="h-8 w-auto" />
 						</a>
 						<button
 							type="button"
