@@ -4,6 +4,9 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../images/logo.jpg";
+import React from "react";
+import { motion } from "framer-motion";
+
 const navigation = [
 	{ name: "About", href: "#about" },
 	{ name: "Blogs", href: "#blog" },
@@ -22,21 +25,46 @@ export default function HeroSection() {
 				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
 			>
 				<div className="flex items-center gap-x-12">
-					<a href="/#" className="-m-1.5 p-1.5">
+					<motion.a
+						initial={{ x: -200 }}
+						animate={{ x: 0 }}
+						transition={{ duration: 1.5, ease: "easeOut" }}
+						href="/#"
+						className="-m-1.5 p-1.5"
+					>
 						<span className="sr-only">Your Company</span>
 						<img alt="" src={logo} className="h-10 rounded-full w-auto" />
-					</a>
-					<div className="hidden lg:flex lg:gap-x-12">
+					</motion.a>
+					<motion.div
+						className="hidden lg:flex lg:gap-x-12"
+						initial="hidden"
+						animate="visible"
+						variants={{
+							hidden: { opacity: 0, y: 20 },
+							visible: {
+								opacity: 1,
+								y: 0,
+								transition: {
+									staggerChildren: 0.3, // Delay each child by 0.3s
+								},
+							},
+						}}
+					>
 						{navigation.map((item) => (
-							<a
+							<motion.a
 								key={item.name}
 								href={item.href}
-								className="text-sm font-semibold leading-6 text-gray-900"
+								className="text-sm font-semibold leading-6 text-gray-900 hover:bg-[#e126fe] hover:text-white px-4 py-1 rounded-full"
+								variants={{
+									hidden: { opacity: 0, y: 20 },
+									visible: { opacity: 1, y: 0 },
+								}}
+								transition={{ duration: 0.6, ease: "easeOut" }}
 							>
 								{item.name}
-							</a>
+							</motion.a>
 						))}
-					</div>
+					</motion.div>
 				</div>
 				<div className="flex lg:hidden">
 					<button
@@ -72,17 +100,36 @@ export default function HeroSection() {
 					</div>
 					<div className="mt-6 flow-root">
 						<div className="-my-6 divide-y divide-gray-500/10">
-							<div className="space-y-2 py-6">
+							<motion.div
+								className="space-y-2 py-6"
+								initial="hidden"
+								animate="visible"
+								variants={{
+									hidden: { opacity: 0, y: 20 },
+									visible: {
+										opacity: 1,
+										y: 0,
+										transition: {
+											staggerChildren: 0.3, // Delay each child by 0.3s
+										},
+									},
+								}}
+							>
 								{navigation.map((item) => (
-									<a
+									<motion.a
+										variants={{
+											hidden: { opacity: 0, y: 20 },
+											visible: { opacity: 1, y: 0 },
+										}}
+										transition={{ duration: 0.6, ease: "easeOut" }}
 										key={item.name}
 										href={item.href}
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+										className="-mx-3 block text-base font-semibold leading-7 text-gray-900 hover:bg-[#e126fe] hover:text-white px-4 py-1 rounded-full"
 									>
 										{item.name}
-									</a>
+									</motion.a>
 								))}
-							</div>
+							</motion.div>
 						</div>
 					</div>
 				</DialogPanel>

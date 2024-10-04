@@ -1,3 +1,5 @@
+import React from "react";
+import { motion, useInView } from "framer-motion";
 import img1 from "../images/img1.jpg";
 import img2 from "../images/img2.jpg";
 import img3 from "../images/img3.jpg";
@@ -76,28 +78,47 @@ const products = [
 	// More products...
 ];
 
+const ParallaxSection = ({ children, className }) => {
+	const ref = React.useRef(null);
+	const isInView = useInView(ref, { once: false, amount: 0.3 });
+
+	return (
+		<motion.section
+			ref={ref}
+			initial={{ opacity: 0, y: 50 }}
+			animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+			transition={{ duration: 0.8 }}
+			className={className}
+		>
+			{children}
+		</motion.section>
+	);
+};
+
 export default function Example() {
 	return (
-		<section id="photos">
-			<div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-				<h2 className="text-5xl font-mono py-5 font-bold tracking-tight bg-gradient-to-r from-amber-500 via-violet-600 to-purple-500 bg-clip-text text-transparent">
-					Gallery
-				</h2>
+		<ParallaxSection>
+			<section id="photos">
+				<div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+					<h2 className="text-5xl font-mono py-5 font-bold tracking-tight bg-gradient-to-r from-amber-500 via-violet-600 to-purple-500 bg-clip-text text-transparent">
+						Gallery
+					</h2>
 
-				<div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-					{products.map((product) => (
-						<div key={product.id} className="group relative">
-							<div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-								<img
-									alt={product.imageAlt}
-									src={product.imageSrc}
-									className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-								/>
+					<div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+						{products.map((product) => (
+							<div key={product.id} className="group relative">
+								<div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+									<img
+										alt={product.imageAlt}
+										src={product.imageSrc}
+										className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+									/>
+								</div>
 							</div>
-						</div>
-					))}
+						))}
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</ParallaxSection>
 	);
 }

@@ -1,12 +1,25 @@
 import img1 from "../images/img1.jpg";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function About() {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: false, amount: 0.3 });
 	return (
-		<section id="about" className="isolate overflow-hidden bg-white px-6 lg:px-8">
-			<div className="relative mx-auto max-w-2xl py-24 sm:py-28 lg:max-w-4xl">
-				<h1 className="text-center my-12 text-5xl font-bold font-mono bg-gradient-to-r from-amber-500 via-violet-600 to-purple-500 bg-clip-text text-transparent">
+		<section
+			ref={ref}
+			id="about"
+			className="isolate overflow-hidden bg-white px-6 lg:px-8"
+		>
+			<div className="relative mx-auto max-w-2xl py-24 sm:py-28 lg:max-w-7xl">
+				<motion.h1
+					initial={{ opacity: 0}}
+					animate={isInView ? { opacity: 1} : {}}
+					transition={{ duration: 1, ease: "easeIn", delay: 0.2 }}
+					className="text-center my-12 text-5xl font-bold font-mono bg-gradient-to-r from-amber-500 via-violet-600 to-purple-500 bg-clip-text text-transparent"
+				>
 					ABOUT ME
-				</h1>
+				</motion.h1>
 				<div className="absolute left-1/2 top-0 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,theme(colors.indigo.100),white)] opacity-20 lg:left-36" />
 				<div className="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center" />
 				<figure className="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
@@ -23,26 +36,41 @@ export default function About() {
 							/>
 							<use x={86} href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" />
 						</svg>
-						<blockquote className="text-lg font-semibold leading-8 text-gray-600 sm:text-xl sm:leading-9">
+						<motion.blockquote
+							className="text-lg font-semibold leading-8 text-gray-600 sm:text-xl sm:leading-9"
+							initial={{ opacity: 0, x: 100 }}
+							animate={isInView ? { opacity: 1, x: 0 } : {}}
+							transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+						>
 							<p>
 								I am kind of person who is quiet in large group or in public. I
 								am typically sensitive to noise yet I enjoy being alone. You
 								only see the real me if we're close, I'm also a hardworking
 								independent woman.
 							</p>
-						</blockquote>
+						</motion.blockquote>
 					</div>
-					<div className="col-end-1 w-16 lg:row-span-4 lg:w-96 sm:w-72">
+					<motion.div
+						className="col-end-1 w-full lg:row-span-4 "
+						initial={{ opacity: 0, x: -200 }}
+						animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+						transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+					>
 						<img
 							alt=""
 							src={img1}
 							className="rounded-xl bg-indigo-50 lg:rounded-3xl h-96"
 						/>
-					</div>
-					<figcaption className="text-base lg:col-start-1 lg:row-start-3">
+					</motion.div>
+					<motion.figcaption
+						initial={{ opacity: 0, x: 100 }}
+						animate={isInView ? { opacity: 1, x: 0 } : {}}
+						transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+						className="text-base lg:col-start-1 lg:row-start-3"
+					>
 						<div className="font-bold text-gray-800">Enjely Lariosa</div>
 						<div className="mt-1 text-gray-500">CEO of Workcation</div>
-					</figcaption>
+					</motion.figcaption>
 				</figure>
 			</div>
 		</section>
